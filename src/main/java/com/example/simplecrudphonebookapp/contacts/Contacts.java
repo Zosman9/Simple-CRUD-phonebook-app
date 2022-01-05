@@ -18,13 +18,26 @@ public class Contacts {
     @Column(nullable = false, unique = true)
     private Integer phoneNumber;
 
-    @Column(unique = true, length = 45)
+    @Column(length = 45)
     private String address;
 
     @Column(unique = true, length = 45)
     private String email;
 
-    @Column(unique = true, length = 45)
+    @Override
+    public String toString() {
+        return "Contacts{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", birthday='" + birthday + '\'' +
+                '}';
+    }
+
+    @Column(length = 45)
     private String birthday;
 
     public String getFirstName() {
